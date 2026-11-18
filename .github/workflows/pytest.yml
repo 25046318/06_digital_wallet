@@ -5,13 +5,19 @@ on:
   push:
     branches: [main]
     paths:
-      - '06_digital_wallet/**'
+      - 'wallet_affordability.py'
+      - 'wallet_withdrawal.py'
+      - 'test_wallet_affordability.py'
+      - 'test_wallet_withdrawal.py'
       - '.github/workflows/pytest.yml'
 
   pull_request:
     branches: [main]
     paths:
-      - '06_digital_wallet/**'
+      - 'wallet_affordability.py'
+      - 'wallet_withdrawal.py'
+      - 'test_wallet_affordability.py'
+      - 'test_wallet_withdrawal.py'
       - '.github/workflows/pytest.yml'
 
 concurrency:
@@ -35,4 +41,4 @@ jobs:
         run: pip install pytest
 
       - name: Run unit tests
-        run: python -m pytest -v 06_digital_wallet/
+        run: python -m pytest -v
